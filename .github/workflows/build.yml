@@ -13,7 +13,7 @@ jobs:
         scripts/build-ubuntu-i386.sh
         cd build/install/
         zip -r ../../out.zip *
-    - name: Upload linux i386 artifact
+    - name: Upload linux-i386 artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-linux-i386.zip
@@ -29,7 +29,7 @@ jobs:
         scripts/build-ubuntu-amd64.sh
         cd build/install/
         zip -r ../../out.zip *
-    - name: Upload linux amd64 artifact
+    - name: Upload linux-amd64 artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-linux-amd64.zip
@@ -56,7 +56,7 @@ jobs:
         ./waf.bat build
         cd build\install\
         tar -a -c -f ..\..\out.zip *.*
-    - name: Upload win i386 artifact
+    - name: Upload win-i386 artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-win-i386.zip
@@ -74,7 +74,7 @@ jobs:
         ./waf.bat build
         cd build\install\
         tar -a -c -f ..\..\out.zip *.*
-    - name: Upload win amd64 artifact
+    - name: Upload win-amd64 artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-win-amd64.zip
@@ -92,7 +92,7 @@ jobs:
         ./waf.bat build
         cd build\install\
         tar -a -c -f ..\..\out.zip *.*
-    - name: Upload win i386 dedicated artifact
+    - name: Upload win-i386 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-win-i386-dedicated.zip
@@ -110,7 +110,7 @@ jobs:
         ./waf.bat build
         cd build\install\
         tar -a -c -f ..\..\out.zip *.*
-    - name: Upload win amd64 dedicated artifact
+    - name: Upload win-amd64 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-win-amd64-dedicated.zip
@@ -126,7 +126,7 @@ jobs:
         scripts/build-ubuntu-i386.sh -d
         cd build/install/
         zip -r ../../out.zip *
-    - name: Upload linux i386 dedicated artifact
+    - name: Upload linux-i386 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-linux-i386-dedicated.zip
@@ -142,7 +142,7 @@ jobs:
         scripts/build-ubuntu-amd64.sh -d
         cd build/install/
         zip -r ../../out.zip *
-    - name: Upload linux amd64 dedicated artifact
+    - name: Upload linux-amd64 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
         name: release-linux-amd64-dedicated.zip
