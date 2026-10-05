@@ -11,8 +11,8 @@ jobs:
     - name: Build linux-i386
       run: |
         scripts/build-ubuntu-i386.sh
-        cd build/install/
-        zip -r ../../out.zip *
+        cd build/
+        zip -r ../out.zip *
     - name: Upload linux-i386 artifact
       uses: actions/upload-artifact@v4
       with:
@@ -27,8 +27,8 @@ jobs:
     - name: Build linux-amd64
       run: |
         scripts/build-ubuntu-amd64.sh
-        cd build/install/
-        zip -r ../../out.zip *
+        cd build/
+        zip -r ../out.zip *
     - name: Upload linux-amd64 artifact
       uses: actions/upload-artifact@v4
       with:
@@ -54,8 +54,8 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug --32bits
         ./waf.bat build
-        cd build\install\
-        tar -a -c -f ..\..\out.zip *.*
+        cd build\
+        tar -a -c -f ..\out.zip *.*
     - name: Upload win-i386 artifact
       uses: actions/upload-artifact@v4
       with:
@@ -72,8 +72,8 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug
         ./waf.bat build
-        cd build\install\
-        tar -a -c -f ..\..\out.zip *.*
+        cd build\
+        tar -a -c -f ..\out.zip *.*
     - name: Upload win-amd64 artifact
       uses: actions/upload-artifact@v4
       with:
@@ -90,8 +90,8 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug -d
         ./waf.bat build
-        cd build\install\
-        tar -a -c -f ..\..\out.zip *.*
+        cd build\
+        tar -a -c -f ..\out.zip *.*
     - name: Upload win-i386 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
@@ -108,8 +108,8 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug -d
         ./waf.bat build
-        cd build\install\
-        tar -a -c -f ..\..\out.zip *.*
+        cd build\
+        tar -a -c -f ..\out.zip *.*
     - name: Upload win-amd64 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
@@ -124,8 +124,8 @@ jobs:
     - name: Build dedicated linux-i386
       run: |
         scripts/build-ubuntu-i386.sh -d
-        cd build/install/
-        zip -r ../../out.zip *
+        cd build/
+        zip -r ../out.zip *
     - name: Upload linux-i386 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
@@ -140,8 +140,8 @@ jobs:
     - name: Build dedicated linux-amd64
       run: |
         scripts/build-ubuntu-amd64.sh -d
-        cd build/install/
-        zip -r ../../out.zip *
+        cd build/
+        zip -r ../out.zip *
     - name: Upload linux-amd64 dedicated artifact
       uses: actions/upload-artifact@v4
       with:
